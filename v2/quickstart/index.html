@@ -2748,8 +2748,8 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">pip (Recommended)</label><label for="__tabbed_1_2">uv / uvx</label><label for="__tabbed_1_3">From Source</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Install Peen-SWE with MCP support:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"peen-swe[mcp]"</span>
+<p>Install Peen with MCP support:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"peen[mcp]"</span>
 </code></pre></div>
 <p>Then run the interactive agent:</p>
 <div class="highlight"><pre><span></span><code>peen
@@ -2757,10 +2757,13 @@
 </div>
 <div class="tabbed-block">
 <p>Run immediately without activating an environment:</p>
-<div class="highlight"><pre><span></span><code>uvx<span class="w"> </span>--from<span class="w"> </span>peen-swe<span class="w"> </span>peen
+<div class="highlight"><pre><span></span><code>uvx<span class="w"> </span>peen
+</code></pre></div>
+<p>Or run directly from GitHub:</p>
+<div class="highlight"><pre><span></span><code>uvx<span class="w"> </span>--from<span class="w"> </span>git+https://github.com/sobhit-singh/peen-swe<span class="w"> </span>peen
 </code></pre></div>
 <p>Or install into your global <code>uv</code> toolchain:</p>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span><span class="s2">"peen-swe[mcp]"</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span><span class="s2">"peen[mcp]"</span>
 peen
 </code></pre></div>
 </div>

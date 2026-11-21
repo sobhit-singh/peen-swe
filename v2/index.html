@@ -2675,7 +2675,10 @@
 <p>Peen-SWE is a minimal, transparent software engineering agent for the terminal. Built on a clean 100-line Python core, it executes shell commands directly via stateless execution and connects to external developer tools using the <strong>Model Context Protocol (MCP)</strong>.</p>
 <p>No bloated abstractions, no opaque prompt graphs, and no fragile shell sessions.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Install with MCP support</span>
-pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"peen-swe[mcp]"</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"peen[mcp]"</span>
+
+<span class="c1"># Or run directly without installation</span>
+uvx<span class="w"> </span>peen
 
 <span class="c1"># Launch the interactive terminal agent</span>
 peen
