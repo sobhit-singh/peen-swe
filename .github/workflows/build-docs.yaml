@@ -1,0 +1,57 @@
+name: build-docs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Prevent concurrent runs that could conflict when pushing to gh-pages
+concurrency:
+  group: build-docs-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v6
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+      - run: uv pip install --python ${Python_ROOT_DIR} '.[full]'
+      - name: Deploy Documentation & Landing Page (main)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mike deploy --push --update-aliases v2 latest
+          git fetch origin gh-pages:gh-pages
+          git checkout gh-pages
+          git checkout main -- landing/index.html
+          mv landing/index.html index.html
+          git rm -rf --ignore-unmatch landing
+          git add index.html
+          git commit -m "docs: publish root landing page" || true
+          git push origin gh-pages
+          git checkout main
+      - name: Build Documentation (strict)
+        run: mkdocs build --strict
