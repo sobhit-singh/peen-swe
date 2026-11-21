@@ -539,7 +539,7 @@
       <a href="./" class="brand">
         <img src="./latest/assets/peen_logo.svg" width="24" height="24" style="border-radius: 4px;" alt="Peen-SWE Logo">
         Peen-SWE
-        <span class="brand-tag">v2.4.6</span>
+        <span class="brand-tag">v1.0.0</span>
       </a>
       <div class="nav-links">
         <a href="./latest/">Documentation</a>
@@ -776,7 +776,7 @@ peen -m "hosted_vllm/Qwen2.5-Coder" \
   <footer>
     <div class="footer-inner">
       <div>
-        <strong>Peen-SWE</strong> · Workshop-forged software engineering agent. Forked & overhauled from <a href="https://github.com/SWE-agent/mini-swe-agent" style="color: var(--text-muted); text-decoration: underline;">mini-swe-agent</a> (Princeton / SWE-bench).
+        <strong>Peen-SWE</strong> · Workshop-forged software engineering agent. Forked & overhauled from <a href="https://github.com/sobhit-singh/peen-swe" style="color: var(--text-muted); text-decoration: underline;">peen</a> (Princeton / SWE-bench).
       </div>
       <div class="footer-links">
         <a href="./latest/">Docs</a>
@@ -791,22 +791,22 @@ peen -m "hosted_vllm/Qwen2.5-Coder" \
     const demos = {
       confirm: [
         { type: 'input', text: '$ peen -t "Fix TypeError in cli parser"' },
-        { type: 'system', text: 'Initializing Peen-SWE v2.4.6 | Model: claude-3-5-sonnet-20241022' },
+        { type: 'system', text: 'Initializing Peen-SWE v1.0.0 | Model: claude-3-5-sonnet-20241022' },
         { type: 'thought', text: 'Thinking: Inspect tests/test_cli.py to locate the failing assertion.' },
-        { type: 'action', text: '```mswea_bash_command\npytest tests/test_cli.py\n```' },
+        { type: 'action', text: '```peen_bash_command\npytest tests/test_cli.py\n```' },
         { type: 'prompt', text: 'Action proposed: pytest tests/test_cli.py\n[Enter to confirm, or type instructions to redirect]:' },
         { type: 'user', text: '[Confirmed by user]' },
         { type: 'output', text: 'FAILED tests/test_cli.py::test_parse_args - TypeError: OptionInfo is not callable' },
         { type: 'thought', text: 'Thinking: The OptionInfo object in Typer was treated as a callable. Editing src/cli.py...' },
-        { type: 'action', text: '```mswea_bash_command\nsed -i \'s/mcp_config()/mcp_config/g\' src/cli.py && pytest tests/test_cli.py\n```' },
+        { type: 'action', text: '```peen_bash_command\nsed -i \'s/mcp_config()/mcp_config/g\' src/cli.py && pytest tests/test_cli.py\n```' },
         { type: 'output', text: '1 passed in 0.12s\nSUCCESS: Patch verified cleanly.' }
       ],
       yolo: [
         { type: 'input', text: '$ peen -t "Audit and fix lint warnings" -y' },
         { type: 'system', text: 'Mode: YOLO (/y) - Executing actions automatically without confirmation' },
-        { type: 'action', text: '```mswea_bash_command\nruff check .\n```' },
+        { type: 'action', text: '```peen_bash_command\nruff check .\n```' },
         { type: 'output', text: 'Found 3 errors: F401 unused import in src/env.py' },
-        { type: 'action', text: '```mswea_bash_command\nruff check --fix .\n```' },
+        { type: 'action', text: '```peen_bash_command\nruff check --fix .\n```' },
         { type: 'output', text: '3 errors auto-fixed. All checks pass.' },
         { type: 'system', text: 'Run complete. Trajectory saved to ~/.peen/trajectories/session_92a.json' }
       ],
@@ -818,7 +818,7 @@ peen -m "hosted_vllm/Qwen2.5-Coder" \
         { type: 'action', text: 'MCP call: postgres_schema({"table": "users"})' },
         { type: 'output', text: '{"columns": [{"name": "id", "type": "uuid"}, {"name": "email", "type": "text"}]}' },
         { type: 'thought', text: 'Thinking: Found schema. Now running bash migration script.' },
-        { type: 'action', text: '```mswea_bash_command\npython -m alembic upgrade head\n```' },
+        { type: 'action', text: '```peen_bash_command\npython -m alembic upgrade head\n```' },
         { type: 'output', text: 'Running upgrade 1a8c -> 4b2f (add user verified column)... Done.' }
       ]
     };
