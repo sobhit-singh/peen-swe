@@ -2728,9 +2728,9 @@
 <h2 id="basic-execution">Basic Execution</h2>
 <p>Instantiate a model, an environment, and <code>DefaultAgent</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">minisweagent.agents.default</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultAgent</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">minisweagent.environments.local</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalEnvironment</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">minisweagent.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">peen.agents.default</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultAgent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">peen.environments.local</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalEnvironment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">peen.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_model</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
@@ -2748,10 +2748,10 @@
 <hr>
 <h2 id="programmatic-mcp-integration">Programmatic MCP Integration</h2>
 <p>Peen-SWE allows injecting Model Context Protocol (MCP) server managers programmatically. Tools exposed by MCP servers are automatically routed through stdio and made available alongside bash:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">minisweagent.agents.default</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultAgent</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">minisweagent.environments.local</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalEnvironment</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">minisweagent.mcp.manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">MCPManager</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">minisweagent.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_model</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">peen.agents.default</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultAgent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">peen.environments.local</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalEnvironment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">peen.mcp.manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">MCPManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">peen.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_model</span>
 
 <span class="c1"># Initialize MCP manager with SQLite or custom tool servers</span>
 <span class="n">mcp_manager</span> <span class="o">=</span> <span class="n">MCPManager</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>

@@ -2754,11 +2754,11 @@
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">// agent configuration</span>
-<span class="w">      </span><span class="nt">"agent_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minisweagent.agents.default.DefaultAgent"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"agent_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peen.agents.default.DefaultAgent"</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">// model configuration</span>
-<span class="w">      </span><span class="nt">"model_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minisweagent.models.litellm_model.LitellmModel"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"model_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peen.models.litellm_model.LitellmModel"</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">"environment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">// environment configuration</span>
-<span class="w">      </span><span class="nt">"environment_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minisweagent.environments.local.LocalEnvironment"</span>
+<span class="w">      </span><span class="nt">"environment_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peen.environments.local.LocalEnvironment"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">"mini_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">  </span><span class="c1">// package version identifier</span>
 <span class="w">    </span><span class="nt">"exit_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Submitted"</span><span class="p">,</span><span class="w">  </span><span class="c1">// final status (Submitted, LimitsExceeded, etc.)</span>
@@ -2770,7 +2770,7 @@
 <span class="w">    </span><span class="p">{</span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assistant"</span><span class="p">,</span><span class="w"> </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">},</span>
 <span class="w">    </span><span class="err">...</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">"trajectory_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mini-swe-agent-1.1"</span><span class="w">  </span><span class="c1">// format version identifier</span>
+<span class="w">  </span><span class="nt">"trajectory_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peen-1.0"</span><span class="w">  </span><span class="c1">// format version identifier</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Messages follow the <a href="https://platform.openai.com/docs/api-reference/chat">OpenAI chat format</a> with an additional <code>extra</code> field for Peen-SWE execution metadata. Models may add other fields to messages (e.g., <code>tool_calls</code>, <code>reasoning_content</code>).</p>
@@ -2787,7 +2787,7 @@
 <span class="c1">// Assistant message (model response with parsed actions)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assistant"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let me check the files...\n\n```mswea_bash_command\nls -la\n```"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let me check the files...\n\n```peen_bash_command\nls -la\n```"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"extra"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ls -la"</span><span class="p">}],</span><span class="w">  </span><span class="c1">// parsed actions to execute</span>
 <span class="w">    </span><span class="nt">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.003</span><span class="p">,</span><span class="w">  </span><span class="c1">// cost of this API call</span>

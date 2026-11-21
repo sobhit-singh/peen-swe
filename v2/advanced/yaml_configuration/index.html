@@ -2946,7 +2946,7 @@ or even to an import path (to use your own custom agent class even if it is not 
 </details>
 <p>In all builtin agents, you can use the following variables:</p>
 <ul>
-<li>Environment variables (<code>LocalEnvironment</code> only, see discussion <a href="https://github.com/SWE-agent/mini-swe-agent/pull/425">here</a>)</li>
+<li>Environment variables (<code>LocalEnvironment</code> only, see discussion <a href="https://github.com/sobhit-singh/peen-swe/pull/425">here</a>)</li>
 <li>Agent config variables (i.e., anything that was set in the <code>agent</code> section of the config file, e.g., <code>step_limit</code>, <code>cost_limit</code>, etc.)</li>
 <li>Environment config variables (i.e., anything that was set in the <code>environment</code> section of the config file, e.g., <code>cwd</code>, <code>timeout</code>, etc.)</li>
 <li>Variables passed to the <code>run</code> method of the agent (by default that's only <code>task</code>, but you can pass other variables if you want to)</li>
@@ -2955,7 +2955,7 @@ or even to an import path (to use your own custom agent class even if it is not 
 <h3 id="using-tool-calls">Using tool calls</h3>
 <p>Make sure to use the appropriate model class and matching configuration.</p>
 <h3 id="custom-action-parsing-from-text">Custom Action Parsing from Text</h3>
-<p>Peen-SWE can parse actions from markdown code blocks (<code>```mswea_bash_command ... ```</code>) or from native tool calls.
+<p>Peen-SWE can parse actions from markdown code blocks (<code>```peen_bash_command ... ```</code>) or from native tool calls.
 You can customize this behavior by setting the <code>action_regex</code> field to support different formats like XML.</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -2975,7 +2975,7 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 <span class="w">    </span><span class="no">&lt;format_example&gt;</span>
 <span class="w">    </span><span class="no">THOUGHT: Your reasoning and analysis here</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;your_command_here&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;your_command_here&lt;/peen_bash_command&gt;</span>
 <span class="w">    </span><span class="no">&lt;/format_example&gt;</span>
 
 <span class="w">    </span><span class="no">Failure to follow these rules will cause your response to be rejected.</span>
@@ -3034,16 +3034,16 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 <span class="w">    </span><span class="no">THOUGHT: Here I explain my reasoning process, analysis of the current situation,</span>
 <span class="w">    </span><span class="no">and what I'm trying to accomplish with the command below.</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;your_command_here&lt;/mswea_bash_command&gt;&lt;/format_example&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;your_command_here&lt;/peen_bash_command&gt;&lt;/format_example&gt;</span>
 <span class="w">    </span><span class="no">Commands must be specified in a single bash XML tag:</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;your_command_here&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;your_command_here&lt;/peen_bash_command&gt;</span>
 
 <span class="w">    </span><span class="no">**CRITICAL REQUIREMENTS:**</span>
 
 <span class="w">    </span><span class="no">- Your response SHOULD include a THOUGHT section explaining your reasoning</span>
-<span class="w">    </span><span class="no">- Your response MUST include EXACTLY ONE mswea_bash_command tag</span>
-<span class="w">    </span><span class="no">- This bash mswea_bash_command MUST contain EXACTLY ONE command (or a set of commands connected with &amp;&amp; or ||)</span>
+<span class="w">    </span><span class="no">- Your response MUST include EXACTLY ONE peen_bash_command tag</span>
+<span class="w">    </span><span class="no">- This bash peen_bash_command MUST contain EXACTLY ONE command (or a set of commands connected with &amp;&amp; or ||)</span>
 <span class="w">    </span><span class="no">- If you include zero or multiple tags, or no command at all, YOUR RESPONSE WILL FAIL</span>
 <span class="w">    </span><span class="no">- Do NOT try to run multiple independent commands in separate blocks in one response</span>
 <span class="w">    </span><span class="no">- Directory or environment variable changes are not persistent. Every action is executed in a new subshell.</span>
@@ -3054,7 +3054,7 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 <span class="w">    </span><span class="no">&lt;example_response&gt;</span>
 <span class="w">    </span><span class="no">THOUGHT: I need to understand the structure of the repository first. Let me check what files are in the current directory to get a better understanding of the codebase.</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;ls -la&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;ls -la&lt;/peen_bash_command&gt;</span>
 <span class="w">    </span><span class="no">&lt;/example_response&gt;</span>
 
 <span class="w">    </span><span class="no">Example of an INCORRECT response:</span>
@@ -3062,18 +3062,18 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 <span class="w">    </span><span class="no">&lt;example_response&gt;</span>
 <span class="w">    </span><span class="no">THOUGHT: I need to examine the codebase and then look at a specific file. I'll run multiple commands to do this.</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;ls -la&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;ls -la&lt;/peen_bash_command&gt;</span>
 
 <span class="w">    </span><span class="no">Now I'll read the file:</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;cat file.txt&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;cat file.txt&lt;/peen_bash_command&gt;</span>
 <span class="w">    </span><span class="no">&lt;/example_response&gt;</span>
 
 <span class="w">    </span><span class="no">If you need to run multiple commands, either:</span>
 
 <span class="w">    </span><span class="no">1. Combine them in one block using &amp;&amp; or ||</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;command1 &amp;&amp; command2 || echo "Error occurred"&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;command1 &amp;&amp; command2 || echo "Error occurred"&lt;/peen_bash_command&gt;</span>
 
 <span class="w">    </span><span class="no">2. Wait for the first command to complete, see its output, then issue the next command in your following response.</span>
 
@@ -3111,7 +3111,7 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 <span class="w">    </span><span class="no">Step 3: Submit (EXACT command required)</span>
 <span class="w">    </span><span class="no">You MUST use this EXACT command to submit:</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT &amp;&amp; cat patch.txt&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT &amp;&amp; cat patch.txt&lt;/peen_bash_command&gt;</span>
 
 <span class="w">    </span><span class="no">If the command fails (nonzero exit status), it will not submit.</span>
 
@@ -3165,7 +3165,7 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 <span class="w">    </span><span class="no">{{ output.output[-5000:] }}</span>
 <span class="w">    </span><span class="no">&lt;/output_tail&gt;</span>
 <span class="w">    </span><span class="no">{%- endif -%}</span>
-<span class="w">  </span><span class="nt">action_regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;mswea_bash_command&gt;(.*?)&lt;/mswea_bash_command&gt;</span>
+<span class="w">  </span><span class="nt">action_regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;peen_bash_command&gt;(.*?)&lt;/peen_bash_command&gt;</span>
 <span class="w">  </span><span class="nt">format_error_template</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">    </span><span class="no">{% if finish_reason is defined and finish_reason in ["length", "tool_calls"] -%}</span>
 <span class="w">    </span><span class="no">Your previous response reached the output token limit (finish_reason={{ finish_reason }}) before you produced a complete action, so it was cut off. Respond more concisely and provide exactly one action in the required format. If you need to think more, do so briefly.</span>
@@ -3178,14 +3178,14 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 
 <span class="w">    </span><span class="no">Here is general guidance on how to format your response:</span>
 
-<span class="w">    </span><span class="no">Please always provide EXACTLY ONE action in the `&lt;mswea_bash_command&gt;` block, found {{actions|length}} actions.</span>
+<span class="w">    </span><span class="no">Please always provide EXACTLY ONE action in the `&lt;peen_bash_command&gt;` block, found {{actions|length}} actions.</span>
 
-<span class="w">    </span><span class="no">Please format your action in a `&lt;mswea_bash_command&gt;` block as shown in &lt;response_example&gt;.</span>
+<span class="w">    </span><span class="no">Please format your action in a `&lt;peen_bash_command&gt;` block as shown in &lt;response_example&gt;.</span>
 
 <span class="w">    </span><span class="no">&lt;response_example&gt;</span>
 <span class="w">    </span><span class="no">Here are some thoughts about why you want to perform the action.</span>
 
-<span class="w">    </span><span class="no">&lt;mswea_bash_command&gt;ls -la&lt;/mswea_bash_command&gt;</span>
+<span class="w">    </span><span class="no">&lt;peen_bash_command&gt;ls -la&lt;/peen_bash_command&gt;</span>
 <span class="w">    </span><span class="no">&lt;/response_example&gt;</span>
 
 <span class="w">    </span><span class="no">If you have completed your assignment, please consult the first message about how to</span>
@@ -3200,12 +3200,12 @@ You can customize this behavior by setting the <code>action_regex</code> field t
 <summary>Default markdown format</summary>
 <p>This is the default configuration (already the default, you don't need to specify this):</p>
 <div class="highlight"><pre><span></span><code><span class="nt">model</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">action_regex</span><span class="p">:</span><span class="w"> </span><span class="err">```</span><span class="l l-Scalar l-Scalar-Plain">mswea_bash_command\s*\n(.*?)\n```</span>
+<span class="w">  </span><span class="nt">action_regex</span><span class="p">:</span><span class="w"> </span><span class="err">```</span><span class="l l-Scalar l-Scalar-Plain">peen_bash_command\s*\n(.*?)\n```</span>
 <span class="nt">agent</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">system_template</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">    </span><span class="no">Your response must contain exactly ONE bash code block.</span>
 
-<span class="w">    </span><span class="no">```mswea_bash_command</span>
+<span class="w">    </span><span class="no">```peen_bash_command</span>
 <span class="w">    </span><span class="no">your_command_here</span>
 <span class="w">    </span><span class="no">```</span>
 </code></pre></div>

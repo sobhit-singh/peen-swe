@@ -2525,7 +2525,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;mini_extra
@@ -2537,7 +2537,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra.subcommands" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra.subcommands" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;subcommands
@@ -2548,7 +2548,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra.get_docstring" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra.get_docstring" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_docstring
@@ -2559,7 +2559,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra.main" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra.main" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;main
@@ -2679,7 +2679,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;mini_extra
@@ -2691,7 +2691,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra.subcommands" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra.subcommands" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;subcommands
@@ -2702,7 +2702,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra.get_docstring" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra.get_docstring" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_docstring
@@ -2713,7 +2713,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#minisweagent.run.utilities.mini_extra.main" class="md-nav__link">
+  <a href="#peen.run.utilities.mini_extra.main" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;main
@@ -2758,7 +2758,7 @@
 <div class="admonition note">
 <p class="admonition-title">Mini Extra CLI</p>
 <ul>
-<li><a href="https://github.com/sobhit-singh/peen-swe/blob/main/src/minisweagent/run/utilities/mini_extra.py">Read on GitHub</a></li>
+<li><a href="https://github.com/sobhit-singh/peen-swe/blob/main/src/peen/run/utilities/mini_extra.py">Read on GitHub</a></li>
 </ul>
 <details class="note">
 <summary>Full source code</summary>
@@ -2775,16 +2775,16 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">rich.console</span><span class="w"> </span><span class="kn">import</span> <span class="n">Console</span>
 
 <span class="n">subcommands</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s2">"minisweagent.run.utilities.config"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"config"</span><span class="p">],</span> <span class="s2">"Manage the global config file"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"minisweagent.run.utilities.inspector"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"inspect"</span><span class="p">,</span> <span class="s2">"i"</span><span class="p">,</span> <span class="s2">"inspector"</span><span class="p">],</span> <span class="s2">"Run inspector (browse trajectories)"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"minisweagent.run.benchmarks.swebench"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"swebench"</span><span class="p">],</span> <span class="s2">"Evaluate on SWE-bench (batch mode)"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"minisweagent.run.benchmarks.swebench_single"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"swebench-single"</span><span class="p">],</span> <span class="s2">"Evaluate on SWE-bench (single instance)"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"minisweagent.run.benchmarks.programbench"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"programbench"</span><span class="p">],</span> <span class="s2">"Run on ProgramBench (batch mode)"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"peen.run.utilities.config"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"config"</span><span class="p">],</span> <span class="s2">"Manage the global config file"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"peen.run.utilities.inspector"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"inspect"</span><span class="p">,</span> <span class="s2">"i"</span><span class="p">,</span> <span class="s2">"inspector"</span><span class="p">],</span> <span class="s2">"Run inspector (browse trajectories)"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"peen.run.benchmarks.swebench"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"swebench"</span><span class="p">],</span> <span class="s2">"Evaluate on SWE-bench (batch mode)"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"peen.run.benchmarks.swebench_single"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"swebench-single"</span><span class="p">],</span> <span class="s2">"Evaluate on SWE-bench (single instance)"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"peen.run.benchmarks.programbench"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"programbench"</span><span class="p">],</span> <span class="s2">"Run on ProgramBench (batch mode)"</span><span class="p">),</span>
 <span class="p">]</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_docstring</span><span class="p">(</span><span class="n">prog</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"peen-extra"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="n">app_name</span> <span class="o">=</span> <span class="s2">"Peen-SWE"</span> <span class="k">if</span> <span class="s2">"peen"</span> <span class="ow">in</span> <span class="n">prog</span> <span class="k">else</span> <span class="s2">"mini-swe-agent"</span>
+    <span class="n">app_name</span> <span class="o">=</span> <span class="s2">"Peen-SWE"</span> <span class="k">if</span> <span class="s2">"peen"</span> <span class="ow">in</span> <span class="n">prog</span> <span class="k">else</span> <span class="s2">"peen"</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
         <span class="sa">f</span><span class="s2">"This is the [yellow]central entry point for all extra commands[/yellow] from </span><span class="si">{</span><span class="n">app_name</span><span class="si">}</span><span class="s2">."</span><span class="p">,</span>
         <span class="s2">""</span><span class="p">,</span>
@@ -2823,8 +2823,8 @@
 
 
 
-<h2 id="minisweagent.run.utilities.mini_extra" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">minisweagent.run.utilities.mini_extra</span>
+<h2 id="peen.run.utilities.mini_extra" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">peen.run.utilities.mini_extra</span>
 
 
 </h2>
@@ -2856,7 +2856,7 @@ inspecting trajectories, etc.</p>
 
 
 
-<h3 id="minisweagent.run.utilities.mini_extra.subcommands" class="doc doc-heading">
+<h3 id="peen.run.utilities.mini_extra.subcommands" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">subcommands</span>
 
 
@@ -2867,27 +2867,27 @@ inspecting trajectories, etc.</p>
 </h3>
 <div class="doc-signature highlight"><pre><span></span><code><span class="n">subcommands</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span>
-        <span class="s2">"minisweagent.run.utilities.config"</span><span class="p">,</span>
+        <span class="s2">"peen.run.utilities.config"</span><span class="p">,</span>
         <span class="p">[</span><span class="s2">"config"</span><span class="p">],</span>
         <span class="s2">"Manage the global config file"</span><span class="p">,</span>
     <span class="p">),</span>
     <span class="p">(</span>
-        <span class="s2">"minisweagent.run.utilities.inspector"</span><span class="p">,</span>
+        <span class="s2">"peen.run.utilities.inspector"</span><span class="p">,</span>
         <span class="p">[</span><span class="s2">"inspect"</span><span class="p">,</span> <span class="s2">"i"</span><span class="p">,</span> <span class="s2">"inspector"</span><span class="p">],</span>
         <span class="s2">"Run inspector (browse trajectories)"</span><span class="p">,</span>
     <span class="p">),</span>
     <span class="p">(</span>
-        <span class="s2">"minisweagent.run.benchmarks.swebench"</span><span class="p">,</span>
+        <span class="s2">"peen.run.benchmarks.swebench"</span><span class="p">,</span>
         <span class="p">[</span><span class="s2">"swebench"</span><span class="p">],</span>
         <span class="s2">"Evaluate on SWE-bench (batch mode)"</span><span class="p">,</span>
     <span class="p">),</span>
     <span class="p">(</span>
-        <span class="s2">"minisweagent.run.benchmarks.swebench_single"</span><span class="p">,</span>
+        <span class="s2">"peen.run.benchmarks.swebench_single"</span><span class="p">,</span>
         <span class="p">[</span><span class="s2">"swebench-single"</span><span class="p">],</span>
         <span class="s2">"Evaluate on SWE-bench (single instance)"</span><span class="p">,</span>
     <span class="p">),</span>
     <span class="p">(</span>
-        <span class="s2">"minisweagent.run.benchmarks.programbench"</span><span class="p">,</span>
+        <span class="s2">"peen.run.benchmarks.programbench"</span><span class="p">,</span>
         <span class="p">[</span><span class="s2">"programbench"</span><span class="p">],</span>
         <span class="s2">"Run on ProgramBench (batch mode)"</span><span class="p">,</span>
     <span class="p">),</span>
@@ -2906,7 +2906,7 @@ inspecting trajectories, etc.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="minisweagent.run.utilities.mini_extra.get_docstring" class="doc doc-heading">
+<h3 id="peen.run.utilities.mini_extra.get_docstring" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_docstring</span>
 
 
@@ -2918,7 +2918,7 @@ inspecting trajectories, etc.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>src/minisweagent/run/utilities/mini_extra.py</code></summary>
+              <summary>Source code in <code>src/peen/run/utilities/mini_extra.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
@@ -2931,7 +2931,7 @@ inspecting trajectories, etc.</p>
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_docstring</span><span class="p">(</span><span class="n">prog</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"peen-extra"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="n">app_name</span> <span class="o">=</span> <span class="s2">"Peen-SWE"</span> <span class="k">if</span> <span class="s2">"peen"</span> <span class="ow">in</span> <span class="n">prog</span> <span class="k">else</span> <span class="s2">"mini-swe-agent"</span>
+    <span class="n">app_name</span> <span class="o">=</span> <span class="s2">"Peen-SWE"</span> <span class="k">if</span> <span class="s2">"peen"</span> <span class="ow">in</span> <span class="n">prog</span> <span class="k">else</span> <span class="s2">"peen"</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
         <span class="sa">f</span><span class="s2">"This is the [yellow]central entry point for all extra commands[/yellow] from </span><span class="si">{</span><span class="n">app_name</span><span class="si">}</span><span class="s2">."</span><span class="p">,</span>
         <span class="s2">""</span><span class="p">,</span>
@@ -2951,7 +2951,7 @@ inspecting trajectories, etc.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="minisweagent.run.utilities.mini_extra.main" class="doc doc-heading">
+<h3 id="peen.run.utilities.mini_extra.main" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">main</span>
 
 
@@ -2963,7 +2963,7 @@ inspecting trajectories, etc.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>src/minisweagent/run/utilities/mini_extra.py</code></summary>
+              <summary>Source code in <code>src/peen/run/utilities/mini_extra.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
